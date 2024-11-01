@@ -1,0 +1,156 @@
+/* src/App.css */
+
+body {
+  background-color: #ffffff; /* 배경색 */
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  color: inherit; /* 부모 요소의 색상 상속 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+
+a:hover {
+  text-decoration: none; /* 호버 시에도 밑줄 제거 */
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap; /* 카드가 여러 줄로 표시되도록 설정 */
+  justify-content: space-around; /* 카드 사이의 여백 조정 */
+  padding: 20px;
+}
+
+.user-card {
+  background: #f7f8f9; /* 카드 배경색 */
+  color: #000; /* 텍스트 색상 */
+  border-radius: 8px; /* 둥근 모서리 */
+  padding: 16px; /* 카드 내부 여백 */
+  width: 50%; /* 2개 카드 배치 계산 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  margin-bottom: 20px; /* 카드 간의 세로 여백 */
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 배치 */
+}
+
+.rating-container {
+  display: flex; /* 내부 요소들을 가로로 나열 */
+  justify-content: space-between; /* 공간 분배 */
+  align-items: flex-start; /* 중앙 정렬 */
+}
+
+.rating-icon {
+  display: flex;
+  align-items: center; /* 중앙 정렬 */
+  color: #8a8f95;
+  letter-spacing: 0.1ch;
+  font-size: 0.9em;
+}
+
+.rating-icon svg {
+  margin-right: 8px; /* 아이콘과 텍스트 사이의 여백 */
+}
+
+.rating-info {
+  padding-bottom: 10px;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.profile-image {
+  border-radius: 50%; /* 원형으로 만들기 */
+  margin-right: 8px; /* 이미지와 텍스트 사이의 여백 */
+  vertical-align: middle; /* 텍스트와 세로 정렬 맞추기 */
+  width: 16px;
+  height: 16px;
+}
+
+.tier-info {
+  font-size: 1.5em; /* 폰트 크기 조정 */
+}
+
+.stats-container {
+  padding: 8px 24px;
+  text-align: right;
+}
+
+.problem-info,
+.class-info,
+.solution-info {
+  margin-top: 10px; /* 여백 조정 */
+}
+
+.problem-solved,
+.class-solved,
+.solved-increase {
+  font-weight: bold; /* 두껍게 표시 */
+  color: rgb(181, 93, 10); /* 색상 설정 */
+}
+
+.difficulty-formula {
+  font-size: 0.9em; /* 수식 크기 조정 */
+  color: #666; /* 색상 조정 */
+}
+
+.tabler-icon {
+  vertical-align: middle;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.tier-unranked {
+  color: #2d2d2d;
+}
+
+.tier-bronze {
+  color: #ad5600;
+}
+
+.tier-silver {
+  color: #435f7a;
+}
+
+.tier-gold {
+  color: #ec9a00;
+}
+
+.tier-platinum {
+  color: #27e2a4;
+}
+
+.tier-diamond {
+  color: #00b4fc;
+}
+
+.tier-ruby {
+  color: #ff0062;
+}
+
+.tier-master {
+  background-color: rgb(180, 145, 255);
+  background-image: linear-gradient(
+    0deg,
+    rgb(255, 124, 168),
+    rgb(180, 145, 255),
+    rgb(124, 249, 255)
+  );
+  background-size: 80%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .user-card {
+    width: calc(50% - 10px); /* 모바일에서는 2개 카드 표시 */
+  }
+}
+
+@media (max-width: 480px) {
+  .user-card {
+    width: 100%; /* 작은 화면에서는 1개 카드씩 표시 */
+  }
+}
