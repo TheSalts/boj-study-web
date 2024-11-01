@@ -100,6 +100,7 @@ const SolvedProblems: React.FC<Username> = ({ name }) => {
               key={problem.problemId}
               href={`https://www.acmicpc.net/problem/${problem.problemId}`}
               className={getTier(problem.level).class}
+              title={getTier(problem.level).name}
             >
               {problem.problemId}{" "}
             </a>
