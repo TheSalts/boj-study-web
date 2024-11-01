@@ -129,7 +129,15 @@ const UserInfo: React.FC = () => {
                 alt="User Profile"
                 className="profile-image"
               />
-              <b>{`${user.handle}`}</b>
+              <b>
+                <a
+                  href={`https://solved.ac/profile/${user.handle}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {`${user.handle}`}
+                </a>
+              </b>
               <br />
               <small>{`${user.solvedCount}`} 문제 해결</small>
             </div>
