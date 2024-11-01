@@ -9,6 +9,7 @@ interface Problem {
   problemId: number;
   titleKo: string;
   level: number;
+  averageTries: number;
 }
 
 interface UserData {
@@ -90,6 +91,26 @@ const SolvedProblems: React.FC<Username> = ({ name }) => {
       </div>
     );
   }
+  userData.solved.sort((a, b) => {
+    if (a.level !== b.level) {
+      return b.level - a.level;
+    }
+    if (a.averageTries !== b.averageTries) {
+      return b.averageTries - a.averageTries;
+    }
+    return a.problemId - b.problemId;
+  });
+
+  userData.unsolved.sort((a, b) => {
+    if (a.level !== b.level) {
+      return b.level - a.level;
+    }
+    if (a.averageTries !== b.averageTries) {
+      return b.averageTries - a.averageTries;
+    }
+    return a.problemId - b.problemId;
+  });
+
   return (
     <div>
       <div className="problem-info">
