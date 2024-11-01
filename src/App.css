@@ -13,10 +13,6 @@ a {
   text-decoration: none; /* 밑줄 제거 */
 }
 
-a:hover {
-  text-decoration: none; /* 호버 시에도 밑줄 제거 */
-}
-
 .user-list {
   display: flex;
   flex-wrap: wrap; /* 카드가 여러 줄로 표시되도록 설정 */
