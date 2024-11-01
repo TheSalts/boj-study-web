@@ -17,7 +17,7 @@ interface UserData {
 }
 
 const baseUrl =
-  "https://port-0-boj-study-server-m2yr0nku7c7cb8ae.sel4.cloudtype.app";
+  "https://port-0-boj-study-server-m2ysdjnxabf30e95.sel4.cloudtype.app";
 
 const tiers: { tier: number; name: string; rating: number; class: string }[] = [
   { tier: 0, name: "Unrated", rating: 0, class: "tier-unrated" },
