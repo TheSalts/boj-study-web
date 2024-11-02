@@ -56,6 +56,7 @@ a {
   gap: 2rem;
 }
 
+.problem-tier-icon,
 .profile-image {
   border-radius: 50%; /* 원형으로 만들기 */
   margin-right: 8px; /* 이미지와 텍스트 사이의 여백 */
@@ -138,15 +139,43 @@ a {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* 반응형 디자인 */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* 툴팁 위치 조정 */
+  left: 50%;
+  margin-left: -60px; /* 툴팁 중앙 정렬 */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .user-card {
-    width: calc(50% - 10px); /* 모바일에서는 2개 카드 표시 */
+    width: calc(50% - 10px);
   }
 }
 
 @media (max-width: 480px) {
   .user-card {
-    width: 100%; /* 작은 화면에서는 1개 카드씩 표시 */
+    width: 100%;
   }
 }
