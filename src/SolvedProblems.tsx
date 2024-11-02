@@ -10,6 +10,7 @@ interface Problem {
   titleKo: string;
   level: number;
   averageTries: number;
+  sprout: boolean;
 }
 
 interface UserData {
@@ -26,13 +27,49 @@ const tiers: {
   rating: number;
   class: string;
   iconId: number;
+  iconSId?: string;
 }[] = [
   { tier: 0, name: "Unrated", rating: 0, class: "tier-unrated", iconId: 0 },
-  { tier: 1, name: "Bronze V", rating: 30, class: "tier-bronze", iconId: 1 },
-  { tier: 2, name: "Bronze IV", rating: 60, class: "tier-bronze", iconId: 2 },
-  { tier: 3, name: "Bronze III", rating: 90, class: "tier-bronze", iconId: 3 },
-  { tier: 4, name: "Bronze II", rating: 120, class: "tier-bronze", iconId: 4 },
-  { tier: 5, name: "Bronze I", rating: 150, class: "tier-bronze", iconId: 5 },
+  {
+    tier: 1,
+    name: "Bronze V",
+    rating: 30,
+    class: "tier-bronze",
+    iconId: 1,
+    iconSId: "s1",
+  },
+  {
+    tier: 2,
+    name: "Bronze IV",
+    rating: 60,
+    class: "tier-bronze",
+    iconId: 2,
+    iconSId: "s2",
+  },
+  {
+    tier: 3,
+    name: "Bronze III",
+    rating: 90,
+    class: "tier-bronze",
+    iconId: 3,
+    iconSId: "s3",
+  },
+  {
+    tier: 4,
+    name: "Bronze II",
+    rating: 120,
+    class: "tier-bronze",
+    iconId: 4,
+    iconSId: "s4",
+  },
+  {
+    tier: 5,
+    name: "Bronze I",
+    rating: 150,
+    class: "tier-bronze",
+    iconId: 5,
+    iconSId: "s5",
+  },
   { tier: 6, name: "Silver V", rating: 200, class: "tier-silver", iconId: 6 },
   { tier: 7, name: "Silver IV", rating: 300, class: "tier-silver", iconId: 7 },
   { tier: 8, name: "Silver III", rating: 400, class: "tier-silver", iconId: 8 },
@@ -127,6 +164,7 @@ function getTier(tier: number): {
   rating: number;
   class: string;
   iconId: number;
+  iconSId?: string;
 } {
   if (tier >= 0 && tier < tiers.length) {
     return tiers[tier];
@@ -197,7 +235,9 @@ const SolvedProblems: React.FC<Username> = ({ name }) => {
               <span className="tooltiptext">
                 <img
                   src={`https://static.solved.ac/tier_small/${
-                    getTier(problem.level).iconId
+                    problem.sprout === true
+                      ? getTier(problem.level).iconSId
+                      : getTier(problem.level).iconId
                   }.svg`}
                   alt="https://static.solved.ac/tier_small/0.svg"
                   className="problem-tier-icon"
@@ -224,7 +264,9 @@ const SolvedProblems: React.FC<Username> = ({ name }) => {
               <span className="tooltiptext">
                 <img
                   src={`https://static.solved.ac/tier_small/${
-                    getTier(problem.level).iconId
+                    problem.sprout === true
+                      ? getTier(problem.level).iconSId
+                      : getTier(problem.level).iconId
                   }.svg`}
                   alt="https://static.solved.ac/tier_small/0.svg"
                   className="problem-tier-icon"
