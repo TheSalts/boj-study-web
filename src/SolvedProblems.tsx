@@ -122,6 +122,8 @@ const SolvedProblems: React.FC<Username> = ({ name }) => {
               href={`https://www.acmicpc.net/problem/${problem.problemId}`}
               className={getTier(problem.level).class}
               title={getTier(problem.level).name}
+              target="_blank"
+              rel="noreferrer"
             >
               {problem.problemId}{" "}
             </a>
@@ -137,6 +139,8 @@ const SolvedProblems: React.FC<Username> = ({ name }) => {
               href={`https://www.acmicpc.net/problem/${problem.problemId}`}
               className={getTier(problem.level).class}
               title={getTier(problem.level).name}
+              target="_blank"
+              rel="noreferrer"
             >
               {problem.problemId}{" "}
             </a>
