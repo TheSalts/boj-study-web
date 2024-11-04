@@ -148,19 +148,32 @@ a {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: auto; /* 가로 길이를 자동으로 설정 */
   background-color: black;
   color: #fff;
   text-align: center;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   position: absolute;
   z-index: 1;
   bottom: 125%; /* 툴팁 위치 조정 */
-  left: 50%;
-  margin-left: -60px; /* 툴팁 중앙 정렬 */
+  left: 50%; /* 화면의 중앙에 위치 */
+  transform: translateX(-50%); /* 중앙 정렬 */
   opacity: 0;
   transition: opacity 0.3s;
+  font-weight: lighter;
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* 툴팁의 아래쪽에 위치 */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent; /* 삼각형 색상 설정 */
 }
 
 .tooltip:hover .tooltiptext {
